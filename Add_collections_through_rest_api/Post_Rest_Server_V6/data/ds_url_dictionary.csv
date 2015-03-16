@@ -1,0 +1,6 @@
+DS_URL_TYPE    ,[field_dataset_url_type][und][0][value],text
+DS_URL         ,[field_dataset1_url][und][0][url],url
+DS_URL_COMMENTS,[field_dataset_url_comments][und][0][value],text
+PERIOD_AVAIL   ,[field_period_available][und][0][value],text
+DP_DIR_PATH    ,[field_data_pool_directory_path][und][0][value],text
+DP_DIR_HOST    ,[field_data_pool_directory_host][und][0][value],text

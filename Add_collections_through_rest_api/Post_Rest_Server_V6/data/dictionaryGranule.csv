@@ -1,0 +1,15 @@
+GRANULE_NAME,title,text
+GRANULE_COMMENTS,field_granule_comments1[und][0][value],text
+DS_SHORT_NAME,field_dataset_short1_name[und][0][value],text
+START_ORBIT,field_start_orbit1[und][0][value],text
+STOP_ORBIT,field_stop_orbit1[und][0][value],text
+START_DATE,field_start_date[und][0][value][date],date
+STOP_DATE,field_stop_date[und][0][value][date],date
+ENTERED,field_archive_date2[und][0][value][date],date
+MISSING,field_missing1[und][0][value],text
+PATH,field_path1[und][0][value],text
+BROWSE_IMAGE_FILE,field_browse_graphi1_information[und][0][value],value
+BYTE_SIZE        ,field_byte_size[und][0][value],text
+NUM_PASSES,field_number_of_passes[und][0][value],text
+HOST,field_host[und][0][value],text
+ENV,field_env[und][0][value],text

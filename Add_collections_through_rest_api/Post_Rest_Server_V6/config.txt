@@ -1,0 +1,3 @@
+rest_server=http://saronite.itsc.uah.edu/sod/rest
+username=pjha
+password=nepal

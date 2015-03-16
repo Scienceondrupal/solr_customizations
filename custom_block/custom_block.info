@@ -1,0 +1,4 @@
+name="Custom Block"
+description="Custom block with textboxes."
+core=7.x
+package="ITSC"

@@ -1,0 +1,170 @@
+<?php
+
+
+/**
+ * Implements hook_block_info().
+ */
+function custom_block_block_info() {
+    $blocks = array();
+    $blocks['temporal'] = array(
+        'info' => t('Custom Temporal Filter Block'),
+    );
+
+
+    $blocks['spatial'] = array(
+        'info' => t('Custom Spatial Filter Block'),
+    );
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function custom_block_block_configure($delta='') {
+    $form = array();
+
+    switch($delta) {
+//       case 'temporal' :
+//            $form['text_block'] = array(
+//                '#type' => 'fieldset',
+//                '#title' => t('Please enter the text below'),
+//            );
+//            $form['text_block']['text_block_full_text'] = array(
+//                '#type' => 'textarea',
+//                '#title' => t('Text'),
+//                '#default_value' => variable_get('text_block_full_text', ''),
+//            );
+//            break;
+
+    }
+    return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function custom_block_block_save($delta = '', $edit = array()) {
+    switch($delta) {
+        case 'temporal' :
+            variable_set('text_block_full_text', $edit['text_block_full_text']);
+            break;
+        case 'spatial' :
+            variable_set('text_block_full_text', $edit['text_block_full_text']);
+            break;
+    }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function custom_block_block_view($delta='') {
+    $block = array();
+
+    switch($delta) {
+        case 'temporal' :
+            $block['subject'] = t('Temporal Filter');
+            $block['content'] = drupal_get_form('custom_temporal_form');
+            break;
+        case 'spatial' :
+            $block['subject'] = t('Spatial Filter');
+            $block['content'] = drupal_get_form('custom_spatial_form');
+            break;
+    }
+
+    return $block;
+}
+
+function custom_temporal_form($form, &$form_state) {
+
+    drupal_add_library('system', 'ui.datepicker');
+    drupal_add_js(drupal_get_path("module","custom_block")."/custom_block.js");
+    drupal_add_css(drupal_get_path("module","custom_block")."/custom_block.css");
+
+
+
+    $form['startdate'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Start Date'),
+        '#size' => 10,
+        '#maxlength' => 15,
+        '#attributes' => array('class' => array('datepicker')),
+    );
+    $form['enddate'] = array(
+        '#type' => 'textfield',
+        '#title' => t('End Date'),
+        '#size' => 10,
+        '#maxlength' => 15,
+        '#attributes' => array('class' => array('datepicker')),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'Apply',
+        '#action' => 'custom_temporal_form_submit',
+    );
+    $current_url = 'http://' .$_SERVER['HTTP_HOST'] .$_SERVER['REQUEST_URI'];
+
+
+    return $form;
+}
+function  custom_temporal_form_submit($form, &$form_state){
+  
+
+    $form_state['rebuild'] = TRUE;
+   
+
+}
+function custom_spatial_form($form_state) {
+
+    $form['north'] = array(
+        '#type' => 'textfield',
+        '#title' => t('North'),
+        '#size' => 10,
+        '#maxlength' => 15,
+    );
+    $form['south'] = array(
+        '#type' => 'textfield',
+        '#title' => t('South'),
+        '#size' => 10,
+        '#maxlength' => 15,
+    );
+    $form['east'] = array(
+        '#type' => 'textfield',
+        '#title' => t('East'),
+        '#size' => 10,
+        '#maxlength' => 15,
+    );
+    $form['west'] = array(
+        '#type' => 'textfield',
+        '#title' => t('West'),
+        '#size' => 10,
+        '#maxlength' => 15,
+    );
+
+    $current_url = 'http://' .$_SERVER['HTTP_HOST'] .$_SERVER['REQUEST_URI'];
+ 
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'Apply',
+
+    );
+
+  
+
+    return $form;
+}
+
+
+function custom_form_uidatepicker($form, $form_state) {
+   /* drupal_add_library('system', 'ui.datepicker');
+    drupal_add_js("(function ($) { $('.datepicker').datepicker({
+      showOn: 'both',
+      buttonImageOnly: true,
+      dateFormat: 'mm/dd/yy',
+    });
+   // $('.datepicker').datepicker( 'option', 'minDate', 'd' );
+    })(jQuery);", array('type' => 'inline', 'scope' => 'footer', 'weight' => 5));
+
+    return $form;*/
+}

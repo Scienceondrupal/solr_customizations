@@ -1,0 +1,6 @@
+source,destination,linkfield,groupname
+ds_info.csv,ds_urls.csv,DS_SHORT_NAME,field_dataset_url
+ds_info.csv,ds_ssp.csv,DS_SHORT_NAME,field_dataset_ssp
+ds_info.csv,ssmi_inv.csv,DS_SHORT_NAME,
+ds_info.csv,gpm_inv.csv,DS_SHORT_NAME,
+ds_info.csv,lis_inv.csv,DS_SHORT_NAME,

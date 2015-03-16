@@ -1,0 +1,7 @@
+PARAMETER    ,[field_parameter_key][und],text
+PROJ_NAME    ,[field_project_name2][und][0][value],text
+SENSOR       ,[field_sensor2][und][0][value],text
+SOURCE       ,[field_source2][und][0][value],text
+SOURCE_TYPE  ,[field_source_type2][und][0][value],text
+TERM         ,[field_term2][und][0][value],text
+TOPIC        ,[field_topic2][und][0][value],text
